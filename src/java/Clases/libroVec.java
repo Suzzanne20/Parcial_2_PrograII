@@ -93,7 +93,7 @@ public class LibroVec {
         }
     }
     
-     public String eliminarclienteBd(int codi){        
+     public String eliminarlibroBd(int codi){        
         String sql = "DELETE FROM libro WHERE codigoBD="+codi;              
        try{     
             starConex();

@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-
+import Clases.Libro;
+import Clases.LibroVec;
+import Clases.LinkStart;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -12,16 +14,18 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author susan
+ * @author Suzzanne Acevedo
  */
 @WebServlet(urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet {
+    Libro libro;
+    LibroVec regLibro;
+    Libro[] registro;
+    StringBuffer objOut = new StringBuffer();
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
-     *
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
@@ -31,18 +35,34 @@ public class Servlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Servlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Servlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            
+            regLibro=new LibroVec();
+            
+            String control = request.getParameter("control");
+            
+            if(control.toUpperCase().equals("GUARDAR")){
+            libro=new Libro(
+            Integer.parseInt(request.getParameter("cod")),
+            request.getParameter("name"),
+            request.getParameter("tip"),
+            request.getParameter("edit"),
+            request.getParameter("publi"));
+            
+            regLibro.saveCli(libro);
+            }else if (control.toUpperCase().equals("ELIMINAR")){
+             int codDelete = Integer.parseInt(request.getParameter("codigoBD"));
+             regLibro.eliminarlibroBd(codDelete);
+            }
+                   
+        
+        if(regLibro.saveCliBD(libro)){out.println(1);}else{out.println(0);}
+        regLibro.bdView(objOut);
+        out.write(objOut.toString());   
+       
         }
+             
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
