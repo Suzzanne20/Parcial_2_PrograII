@@ -8,6 +8,6 @@ package Clases;
  *
  * @author susan
  */
-public class MetodsVec {
+public class LibroVec {
     
 }

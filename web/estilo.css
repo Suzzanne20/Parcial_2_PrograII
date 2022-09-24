@@ -1,9 +1,47 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 23-sep-2022, 22:56:10
-    Author     : susan
-*/
 
+body{
+ background-color: midnightblue
+}
+
+
+body{
+    background: url(https://img.freepik.com/vector-gratis/composicion-plana-libros-lectura-biblioteca-interior-estanterias-estanterias-mesa-lampara-hombre-lectura_1284-62530.jpg?w=2000) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.princ{
+    margin:0 auto;
+    margin-top: 10%;
+    padding: 0%;
+}
+
+.modal-content{
+    background-color: rgb(255, 255, 255);
+    opacity: .95;
+    box-shadow: 0px 0px 7px black;
+}
+
+.promo{
+
+    margin-left: 30rem;
+
+}
+
+.content{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(2, auto);
+    
+}
+.content .main{
+    grid-column: span 3;  
+    margin-left: 15%;
+}
+
+
+.aside{
+    margin-top: 5%;
+    margin-right: 15%;
+    grid-column: span 4;
+}
