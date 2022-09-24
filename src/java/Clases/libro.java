@@ -9,13 +9,13 @@ package Clases;
  * @author susan
  */
 public class Libro {
-    private String codigo;
+    private int codigo;
     private String nombre;
     private String tipo;
     private String editorial;
     private String publicacion;
 
-    public Libro(String codigo, String nombre, String tipo, String editorial, String publicacion) {
+    public Libro(int codigo, String nombre, String tipo, String editorial, String publicacion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.tipo = tipo;
@@ -24,12 +24,12 @@ public class Libro {
     }
     
     public Libro() {this.nombre="Principito";}
-    
-    public String getCodigo() {
+
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 
@@ -63,6 +63,6 @@ public class Libro {
 
     public void setPublicacion(String publicacion) {
         this.publicacion = publicacion;
-    }}
+    }
     
-   
+}
