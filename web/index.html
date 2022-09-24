@@ -5,11 +5,86 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Biblioteca</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/001/200/145/non_2x/books-png.png" type="image/x-icon"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <link href="estilo.css" rel="stylesheet" type="text/css"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="otrav.js"></script>  
     </head>
     <body>
-        <div>TODO write content</div>
+    
+        <nav class="navbar navbar-dark bg-dark">
+          <div class="container-fluid row text-center "> <div class="row align-items-center">
+          <a class="navbar-brand col" href="index.html">
+          <img src="https://static.vecteezy.com/system/resources/previews/001/200/145/non_2x/books-png.png" alt="" width="30" height="30" class="d-inline-block align-text-top">Biblioteca</a>
+          <a class="navbar-brand col " href="ServletClient">Servlet</a>
+          <a class="navbar-brand col " href="index.html">Registro</a>
+          </div></div>
+        </nav>
+        
+     <div class="content"><main class="main"> <div class="modal-dialog text-center">
+     <div class="col-12 princ">
+     <div class="modal-content">
+        <div class="col-12 logo">           
+         <img src="https://cdn-icons-png.flaticon.com/512/201/201571.png" width="300">
+        </div>
+         <h5>Biblioteca</h5><br>
+         
+        <div class="container">  
+        <h2>Registro de Libros</h2>
+        
+        <form method="POST" action="ServletClient" class="col-12" id="formu" name="formu">
+                  <div class="input-group mb-3">
+                      <span class="input-group-text col-3">Codigo</span>
+                      <input type="text" class="form-control" placeholder="Ingrese codigo de libro" required name="cod" id="cod">
+                      <input type="hidden" name="control" value="GUARDAR">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text col-3">Nombre</span>
+                      <input type="text" class="form-control" placeholder="Ingrese nombre del libro" required name="name" id="name">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text col-3">Tipo</span>
+                      <input type="text" class="form-control" placeholder="Ingrese tipo de pasta" required name="tip" id="tip">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text col-3">Editorial</span>
+                      <input type="email" class="form-control" placeholder="editorial" required name="edit" id="edit">
+                  </div>
+                  <div class="input-group mb-3">
+                      <span class="input-group-text col-3">Publicacion</span>
+                      <input type="text" class="form-control" placeholder="año de publicacion" required name="publi" id="publi">
+                  </div>
+                                          
+            <!--<button type="button" onclick="dataEje()" class="btn btn-info">Validar</button><br><br><div id='nuevo'></div><br>-->
+            <button type="button" onclick="sendData()" class="btn btn-warning">Guardar</button>
+            <button type="reset" class="btn btn-dark">Cancelar</button><br><br><br>
+        </form></div></div></div></div> </main>
+        <aside class="aside"><div class="modal-content text-center">
+            <h2>Registros de Libros </h2>   
+            <table class="table table-dark table-hover">
+                    <thead><tr>
+                            <td>COD</td>
+                            <td>NOMBRE</td>
+                            <td>TIPO</td>
+                            <td>EDITORIAL</td>
+                            <td>PUBLICACION</td>
+                            <td>ACCION</td>
+                    </tr></thead> <tbody id="regTab">  </tbody></table>
+        <br><div class="text-center"> <button type="button" onclick="f5()" class="btn btn-warning">Recargar</button></div><br>   
+        </div></aside></div>
+        
+        
+        
     </body>
 </html>
+
+
+
+
+
